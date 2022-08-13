@@ -37,7 +37,7 @@ public class DebitCardDeliveryTest {
         $("[data-test-id=date]").$("[class='input__control']").sendKeys(Keys.chord(Keys.CONTROL + "A", Keys.DELETE));
         form.$("[data-test-id=date] input").setValue(deliveryDate(5));
         form.$("[data-test-id=name] input").setValue("Иван Мамин");
-        form.$("[data-test-id=phone] input").setValue("+79270000001");
+        form.$("[data-test-id=phone] input").setValue("+79999999999");
         form.$("[data-test-id=agreement]").click();
         form.$$("[role=button]").find(exactText("Забронировать")).click();
         $("[data-test-id='notification'] .notification__content").shouldBe(visible, Duration.ofSeconds(15)).
@@ -47,12 +47,12 @@ public class DebitCardDeliveryTest {
     @Test
     void shouldTestPassedV2() {
         SelenideElement form = $(".form");
-        form.$("[data-test-id=city] input").setValue("Москва");
+        form.$("[data-test-id=city] input").setValue("Пермь");
         $("[data-test-id=date]").$("[class='input__control']").click();
         $("[data-test-id=date]").$("[class='input__control']").sendKeys(Keys.chord(Keys.CONTROL + "A", Keys.DELETE));
         form.$("[data-test-id=date] input").setValue(deliveryDate(10));
         form.$("[data-test-id=name] input").setValue("Иван Мамин-Сибиряк");
-        form.$("[data-test-id=phone] input").setValue("+79270000001");
+        form.$("[data-test-id=phone] input").setValue("+79999999999");
         form.$("[data-test-id=agreement]").click();
         form.$$("[role=button]").find(exactText("Забронировать")).click();
         $("[data-test-id='notification'] .notification__content").shouldBe(visible, Duration.ofSeconds(15)).
@@ -68,7 +68,7 @@ public class DebitCardDeliveryTest {
         $("[data-test-id=date]").$("[class='input__control']").sendKeys(Keys.chord(Keys.CONTROL + "A", Keys.DELETE));
         form.$("[data-test-id=date] input").setValue(deliveryDate(5));
         form.$("[data-test-id=name] input").setValue("Ivan");
-        form.$("[data-test-id=phone] input").setValue("+79270000001");
+        form.$("[data-test-id=phone] input").setValue("+79999999999");
         form.$("[data-test-id=agreement]").click();
         form.$$("[role=button]").find(exactText("Забронировать")).click();
         $("[data-test-id='name'].input_invalid .input__sub")
@@ -156,7 +156,7 @@ public class DebitCardDeliveryTest {
         $("[data-test-id=date]").$("[class='input__control']").click();
         $("[data-test-id=date]").$("[class='input__control']").sendKeys(Keys.chord(Keys.CONTROL + "A", Keys.DELETE));
         form.$("[data-test-id=date] input").setValue(deliveryDate(5));
-        form.$("[data-test-id=name] input").setValue("Иван Васильевич Царь");
+        form.$("[data-test-id=name] input").setValue("Иван Мамин-Сибиряк");
         form.$("[data-test-id=phone] input").setValue("+79999999999");
         form.$$("[role=button]").find(exactText("Забронировать")).click();
         $("[data-test-id='agreement'].input_invalid")
